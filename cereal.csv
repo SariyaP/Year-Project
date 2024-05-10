@@ -3,7 +3,7 @@ name,mfr,type,calories,protein,fat,sodium,fiber,carbo,sugars,potass,vitamins,wei
 100% Natural Bran,Quaker Oats,Cold,120,3,5,15,2,8,8,135,0,1,33.983679
 All-Bran,Kelloggs,Cold,70,4,1,260,9,7,5,320,25,1,59.425505
 All-Bran with Extra Fiber,Kelloggs,Cold,50,4,0,140,14,8,0,330,25,1,93.704912
-Almond Delight,Ralston Purina,Cold,110,2,2,200,1,14,8,-1,25,1,34.384843
+Almond Delight,Ralston Purina,Cold,110,2,2,200,1,14,8,1,25,1,34.384843
 Apple Cinnamon Cheerios,General Mills,Cold,110,2,2,180,1.5,10.5,10,70,25,1,29.509541
 Apple Jacks,Kelloggs,Cold,110,2,0,125,1,11,14,30,25,1,33.174094
 Basic 4,General Mills,Cold,130,3,2,210,2,18,8,100,25,1.33,37.038562
@@ -19,7 +19,7 @@ Corn Flakes,Kelloggs,Cold,100,2,0,290,1,21,2,35,25,1,45.863324
 Corn Pops,Kelloggs,Cold,110,1,0,90,1,13,12,20,25,1,35.782791
 Count Chocula,General Mills,Cold,110,1,1,180,0,12,13,65,25,1,22.396513
 Cracklin' Oat Bran,Kelloggs,Cold,110,3,3,140,4,10,7,160,25,1,40.448772
-Cream of Wheat (Quick),Nabisco,Hot,100,3,0,80,1,21,0,-1,0,1,64.533816
+Cream of Wheat (Quick),Nabisco,Hot,100,3,0,80,1,21,0,1,0,1,64.533816
 Crispix,Kelloggs,Cold,110,2,0,220,1,21,3,30,25,1,46.895644
 Crispy Wheat & Raisins,General Mills,Cold,100,2,1,140,2,11,10,120,25,1,36.176196
 Double Chex,Ralston Purina,Cold,100,2,0,190,1,18,5,80,25,1,44.330856
@@ -42,7 +42,6 @@ Just Right Fruit & Nut,Kelloggs,Cold,140,3,1,170,2,20,9,95,100,1.3,36.471512
 Kix,General Mills,Cold,110,2,1,260,0,21,3,40,25,1,39.241114
 Life,Quaker Oats,Cold,100,4,2,150,2,12,6,95,25,1,45.328074
 Lucky Charms,General Mills,Cold,110,2,1,180,0,12,12,55,25,1,26.734515
-Maypo,American Home Food Products,Hot,100,4,1,0,0,16,3,95,25,1,54.850917
 Muesli Raisins; Dates; & Almonds,Ralston Purina,Cold,150,4,3,95,3,16,11,170,25,1,37.136863
 Muesli Raisins; Peaches; & Pecans,Ralston Purina,Cold,150,4,3,150,3,16,11,170,25,1,34.139765
 Mueslix Crispy Blend,Kelloggs,Cold,160,3,2,150,3,17,13,160,25,1.5,30.313351
@@ -56,7 +55,7 @@ Product 19,Kelloggs,Cold,100,3,0,320,1,20,3,45,100,1,41.50354
 Puffed Rice,Quaker Oats,Cold,50,1,0,0,0,13,0,15,0,0.5,60.756112
 Puffed Wheat,Quaker Oats,Cold,50,2,0,0,1,10,0,50,0,0.5,63.005645
 Quaker Oat Squares,Quaker Oats,Cold,100,4,1,135,2,14,6,110,25,1,49.511874
-Quaker Oatmeal,Quaker Oats,Hot,100,5,2,0,2.7,-1,-1,110,0,1,50.828392
+Quaker Oatmeal,Quaker Oats,Hot,100,5,2,0,2.7,1,1,110,0,1,50.828392
 Raisin Bran,Kelloggs,Cold,120,3,1,210,5,14,12,240,25,1.33,39.259197
 Raisin Nut Bran,General Mills,Cold,100,3,2,140,2.5,10.5,8,140,25,1,39.7034
 Raisin Squares,Kelloggs,Cold,90,2,0,0,2,15,6,110,25,1,55.333142
