@@ -1,13 +1,15 @@
 import tkinter as tk
 from tkinter import ttk, messagebox
-import csv, os
+import csv
+import os
 import matplotlib
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
-matplotlib.use('TkAgg')
 from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
 from nutrition import Nutrition
+matplotlib.use('TkAgg')
+
 
 class DashBoardUI(tk.Tk):
     def __init__(self):
@@ -15,7 +17,7 @@ class DashBoardUI(tk.Tk):
         self.window = self
         self.window.resizable(True, True)
         self.window.title("Cereal Nutritions")
-        self.window.minsize(960,540)
+        self.window.minsize(960, 540)
         self.window.maxsize(960, 540)
         self.window.configure(bg='#D9D9D9')
         self.data = []
@@ -37,24 +39,32 @@ class DashBoardUI(tk.Tk):
         tk.Label(self.window, text='Nutritions of cereals', font="Arial 14", bg='white').place(x=15, y=15)
         tk.Label(self.window, text='Manufacture:', font="Arial 14", bg='white').place(x=685, y=15)
         self.mfr = ['All'] + self.get_value_from_attribute('mfr')
-        self.choosen_mfr = ttk.Combobox(self.window,values=self.mfr, state='readonly')
+        self.choosen_mfr = ttk.Combobox(self.window, values=self.mfr, state='readonly')
         self.choosen_mfr.current(0)
         self.choosen_mfr.bind('<<ComboboxSelected>>', self.choose_mfr)
         self.choosen_mfr.place(x=805, y=19)
 
     def top_cereal(self):
-        self.topcereal = tk.Canvas(self.window, width= 450, height= 220, bg='white').place(x=10, y= 54)
+        tk.Canvas(self.window, width=450, height=220, bg='white').place(x=10, y=54)
         tk.Label(self.window, text='Top 5 Cereals', font="Arial 14", bg='white').place(x=12, y=58)
-        tk.Canvas(self.topcereal, width=200, height=25, bg='white', highlightcolor='black', highlightthickness=2).place(x=25, y=98)
-        tk.Canvas(self.topcereal, width=200, height=25, bg='white', highlightcolor='black', highlightthickness=2).place(x=25, y=133)
-        tk.Canvas(self.topcereal, width=200, height=25, bg='white', highlightcolor='black', highlightthickness=2).place(x=25, y=168)
-        tk.Canvas(self.topcereal, width=200, height=25, bg='white', highlightcolor='black', highlightthickness=2).place(x=25, y=203)
-        tk.Canvas(self.topcereal, width=200, height=25, bg='white', highlightcolor='black', highlightthickness=2).place(x=25, y=238)
+        tk.Canvas(self.window, width=200, height=25, bg='white', highlightcolor='black', highlightthickness=2
+                  ).place(x=25, y=98)
+        tk.Canvas(self.window, width=200, height=25, bg='white', highlightcolor='black', highlightthickness=2
+                  ).place(x=25, y=133)
+        tk.Canvas(self.window, width=200, height=25, bg='white', highlightcolor='black', highlightthickness=2
+                  ).place(x=25, y=168)
+        tk.Canvas(self.window, width=200, height=25, bg='white', highlightcolor='black', highlightthickness=2
+                  ).place(x=25, y=203)
+        tk.Canvas(self.window, width=200, height=25, bg='white', highlightcolor='black', highlightthickness=2
+                  ).place(x=25, y=238)
         self.top = sorted(self.selected, key=lambda d: d['rating'], reverse=True)
         place = [100, 135, 170, 205, 240]
         for i in range(5) if len(self.top) >= 5 else len(self.top):
-            tk.Canvas(self.topcereal, width=float(self.top[i].get('rating', 0))*2, height=25, bg='#41B8D5', highlightthickness=0).place(x=25, y=place[i])
-            tk.Label(self.topcereal, text=f"{self.top[i].get('name', 0)[:28]}{'...' if len(self.top[i].get('name', 0)) > 28 else ''}", bg='white', font='Arial 12').place(x=245, y=place[i])
+            tk.Canvas(self.window, width=float(self.top[i].get('rating', 0))*2, height=25, bg='#41B8D5',
+                      highlightthickness=0).place(x=25, y=place[i])
+            tk.Label(self.window, text=f"{self.top[i].get('name', 0)[:28]}"
+                                       f"{'...' if len(self.top[i].get('name', 0)) > 28 else ''}", bg='white',
+                     font='Arial 12').place(x=245, y=place[i])
 
 
     def num_cereal(self):
@@ -96,7 +106,7 @@ class DashBoardUI(tk.Tk):
         self.bar_chart()
 
     def scatter_chart(self):
-        self.scatterchart = tk.Canvas(self.window, width= 390, height= 246, bg='white').place(x=410, y= 284)
+        tk.Canvas(self.window, width=390, height=246, bg='white').place(x=410, y=284)
         self.pair_fig, self.pair_ax = plt.subplots(figsize=(3, 2))
         x = pd.DataFrame(self.selected)
         sugar = pd.to_numeric(x['sugars'])
@@ -105,7 +115,7 @@ class DashBoardUI(tk.Tk):
         self.pair_ax.set_title('Correlation of Sugars and Calories')
         self.pair_ax.set_xlim(-4, 20)
         self.pair_ax.spines[['top', 'right']].set_visible(False)
-        self.pair_canvas = FigureCanvasTkAgg(self.pair_fig, master=self.scatterchart)
+        self.pair_canvas = FigureCanvasTkAgg(self.pair_fig, master=self.window)
         self.pair_canvas.draw()
         self.pair_canvas_widget = self.pair_canvas.get_tk_widget()
         self.pair_canvas_widget.place(x=450, y=304)
@@ -120,7 +130,7 @@ class DashBoardUI(tk.Tk):
         tk.Label(self.window, text= 'Find', bg='white', font='Arial 20').place(x=852, y=306)
         tk.Label(self.window, text='your', bg='white', font='Arial 20').place(x=852, y=346)
         tk.Label(self.window, text='cereal?', bg='white', font='Arial 20').place(x=842, y=386)
-        self.button = ttk.Button(self.window, text='Go', command=self.cereal_button).place(x=842, y=446)
+        ttk.Button(self.window, text='Go', command=self.cereal_button).place(x=842, y=446)
         ttk.Button(self.window, text='Exit', command=self.window.quit).place(x=842, y=486)
 
     def load_data(self):
