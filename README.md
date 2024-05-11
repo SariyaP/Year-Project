@@ -52,12 +52,3 @@ Activate Virtual Environment
    > source env/bin/activate
   for Windows
    > env\Scripts\activateg Installation.md…]()
-
-1. Clone the project
-   > git clone https://github.com/SariyaP/Year-Project.git
-2. change to project directory
-   > cd Year-Project
-3. Install the requirements.txt
-   > pip install -r requirements.txt
-4. Run the project
-   > python main.py
